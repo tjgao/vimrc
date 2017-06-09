@@ -113,6 +113,7 @@ noremap <C-Backspace> <Esc>:close<CR>
 
 inoremap <S-Space> <c-r>=<C-X><C-U><CR>
 
+nnoremap <C-n> :call NumberToggle()<CR> 
 
 "fun! ReadThesaurus()
 "   " Assign current word under cursor to a script variable
@@ -324,3 +325,11 @@ if !exists('g:cd_hooked')
     com -complete=dir -nargs=1 Cd call ChdirHook(<q-args>)
 endif
 
+" toggle absolute and relative number label
+function! NumberToggle()
+	if (&relativenumber==1)
+		set norelativenumber
+	else
+		set relativenumber
+	endif
+endfunction
