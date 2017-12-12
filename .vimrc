@@ -24,6 +24,7 @@ Plugin 'vim-scripts/Markdown'
 Plugin 'Lokaltog/vim-powerline'
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'vim-scripts/The-NERD-tree'
+Plugin 'tpope/vim-commentary'
 
 let g:EasyMotion_leader_key='\'
 
@@ -44,12 +45,14 @@ filetype plugin on
 filetype indent on
 
 syntax on
+set hlsearch
 set encoding=utf-8
+set tabstop=4
 set shiftwidth=4
 set noexpandtab
-"set softtabstop=4
+set autoindent
+set softtabstop=4
 "set ts=4
-set tabstop=4
 set nu
 set showmatch
 set laststatus=2
@@ -91,7 +94,7 @@ cnoremap <c-h> <s-left>
 cnoremap <c-l> <s-right>
 
 
-noremap <c-a> <Esc>:MRU<CR>
+" noremap <c-a> <Esc>:MRU<CR>
 " Toggle NERDTree
 noremap <c-l> <Esc>:NERDTreeToggle<CR>
 " FuzzyFind for ctag files
@@ -113,7 +116,6 @@ noremap <C-Backspace> <Esc>:close<CR>
 
 inoremap <S-Space> <c-r>=<C-X><C-U><CR>
 
-nnoremap <C-n> :call NumberToggle()<CR> 
 
 "fun! ReadThesaurus()
 "   " Assign current word under cursor to a script variable
@@ -325,11 +327,3 @@ if !exists('g:cd_hooked')
     com -complete=dir -nargs=1 Cd call ChdirHook(<q-args>)
 endif
 
-" toggle absolute and relative number label
-function! NumberToggle()
-	if (&relativenumber==1)
-		set norelativenumber
-	else
-		set relativenumber
-	endif
-endfunction
