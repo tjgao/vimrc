@@ -79,7 +79,11 @@ set nofen
 
 colorscheme xoria256
 if has('gui_running')
-    set guifont=Envy_Code_R:h14
+	if has("gui_gtk2") || has("gui_gtk3")
+		set guifont=Envy\ Code\ R\ 11
+	else
+		set guifont=Envy_Code_R:h14
+	endif
 endif
 
 
