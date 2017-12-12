@@ -45,6 +45,9 @@ filetype plugin on
 filetype indent on
 
 syntax on
+set incsearch
+set ignorecase
+set smartcase
 set hlsearch
 set encoding=utf-8
 set tabstop=4
@@ -330,4 +333,11 @@ if !exists('g:cd_hooked')
 "    augroup end
     com -complete=dir -nargs=1 Cd call ChdirHook(<q-args>)
 endif
+
+" Make j and k move not on linewise basis
+nmap j gj
+nmap k gk
+
+" Temporarily clear hlsearch results
+nmap \s :noh<CR>
 
