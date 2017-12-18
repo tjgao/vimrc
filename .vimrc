@@ -44,6 +44,7 @@ filetype plugin on
 filetype indent on
 
 syntax on
+set hidden
 set incsearch
 set ignorecase
 set smartcase
@@ -345,7 +346,6 @@ let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 nmap <leader>p :CtrlP<CR>
 
 nmap <leader>bb :CtrlPBuffer<CR>
-nmap <leader>bf :CtrlPFile<CR>
 nmap <leader>bu :CtrlPMRU<CR>
 nmap <leader>ba :CtrlPMixed<CR>
 
